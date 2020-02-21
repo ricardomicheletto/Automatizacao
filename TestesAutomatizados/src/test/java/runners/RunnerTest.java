@@ -8,18 +8,19 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		plugin = {"pretty"},
-		//Pasta que contém as features
+		plugin = {"pretty","html:target/cucumber-report"},
+		//Pasta que contï¿½m as features
 		features = "src/test/resources/features",
-		//Pacote que contém os stepDefinitions
+		//Pacote que contï¿½m os stepDefinitions
 		glue = "stepsDefinitions",
 		//tags = "@loginSucesso",
-		tags = "@cadastrarUsuario",
-		//Auxilia na criação dos passos, onde escreve de uma maneira melhor
+		//tags = "@cadastrarUsuario",
+		tags = "@dropdown",
+		//Auxilia na criaï¿½ï¿½o dos passos, onde escreve de uma maneira melhor
 		snippets = io.cucumber.junit.CucumberOptions.SnippetType.CAMELCASE,
-		//Deixa a resposta do terminal de uma única cor
+		//Deixa a resposta do terminal de uma ï¿½nica cor
 		monochrome = true,
-		//Não executa o teste, mas informa os passos através do terminal (padrão false)
+		//Nï¿½o executa o teste, mas informa os passos atravï¿½s do terminal (padrï¿½o false)
 		dryRun = false
 		)
 

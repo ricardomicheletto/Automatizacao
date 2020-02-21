@@ -1,7 +1,10 @@
 package pageObjects;
 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
+
+import static utils.Utils.*;
 
 public class TelaInicialPage extends BasePage{
 	
@@ -20,4 +23,10 @@ public class TelaInicialPage extends BasePage{
 		botaoAdd.click();
 	}
 
+	public void acessarMenuCustomField() throws InterruptedException {
+		Actions acao = new Actions(driver);
+		acao.moveToElement(abaPim).build().perform();
+		acao.moveToElement(menuConfiguration).build().perform();
+		acao.moveToElement(menuField).click().build().perform();
+	}
 }

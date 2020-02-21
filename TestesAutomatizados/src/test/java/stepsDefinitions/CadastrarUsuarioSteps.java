@@ -8,9 +8,13 @@ import pageObjects.TelaInicialPage;
 import static org.junit.Assert.assertTrue;
 import static utils.Utils.*;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 
 public class CadastrarUsuarioSteps {
+
+	Thread t = new Thread();
 
 	@Quando("eu acionar a aba admin")
 	public void euAcionarAAbaAdmin() {
@@ -38,9 +42,9 @@ public class CadastrarUsuarioSteps {
 	}
 
 	@Quando("informar no campo confirmar password {string}")
-	public void informarNoCampoConfirmarPassword(String senha) {
+	public void informarNoCampoConfirmarPassword(String senha) throws InterruptedException {
 		Na(CadastrarUsuarioPage.class).informarCampoConfirmarPassword(senha);
-
+		t.sleep(2000);
 	}
 
 	@Quando("acionar o botao salvar")

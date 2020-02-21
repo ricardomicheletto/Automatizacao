@@ -18,7 +18,7 @@ public class CadastrarUsuarioPage {
 	@FindBy(id = "systemUser_confirmPassword")
 	public WebElement campoConfirmarPassword;
 	
-	@FindBy(id = "btnSave")
+	@FindBy(xpath = "//input[@name='btnSave']")
 	public WebElement botaoSalvar;
 	
 	public void informarCampoEmployerName(String employerName)

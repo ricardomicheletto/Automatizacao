@@ -2,15 +2,16 @@ package stepsDefinitions;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
 import pageObjects.LoginPage;
 
 import static utils.Utils.*;
 
 public class Hooks {
 	
-	//Qualquer código deste bloco é executado antes de qualquer teste
+	//Qualquer cï¿½digo deste bloco ï¿½ executado antes de qualquer teste
 	
-	@Before()
+	@Before(value = "not @login")
 	public void setUp()
 	{
 		acessarSistema();
@@ -24,11 +25,12 @@ public class Hooks {
 		acessarSistema();
 	}
 	
-	//Qualquer código deste bloco é executado depois de todos os testes
+	//Qualquer cï¿½digo deste bloco ï¿½ executado depois de todos os testes
 	//Order decrescente
 	@After
-	public void tearDown()
+	public void tearDown(Scenario scenario)
 	{
+		capturarTela(scenario);
 		//driver.quit();
 	}
 }
